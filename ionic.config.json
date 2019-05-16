@@ -1,0 +1,7 @@
+{
+  "name": "ProvaApp",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
