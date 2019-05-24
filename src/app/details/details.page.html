@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      {{detail.nome}}
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <img src="assets/img/details/{{detail.imgdetail}}" alt=""/>
+    <ion-card-header>
+      <ion-card-subtitle><ion-text color="primary">{{detail.wyvern}}</ion-text></ion-card-subtitle>
+      <ion-card-title><ion-text color="tertiary">{{detail.nome}}</ion-text></ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      {{detail.descr}}
+    </ion-card-content>
+  </ion-card>
+</ion-content>

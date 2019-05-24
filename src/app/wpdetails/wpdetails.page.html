@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+     {{mywp.nome}}
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+    <ion-card *ngFor="let p of mypost">
+      <ion-item>
+        <ion-label>{{p.name}}</ion-label>
+      </ion-item>
+
+      <ion-card-content>
+       {{p.weaponType}}
+        <ion-text color="tertiary">{{p.damageType}}</ion-text>
+      </ion-card-content>
+    </ion-card>
+</ion-content>

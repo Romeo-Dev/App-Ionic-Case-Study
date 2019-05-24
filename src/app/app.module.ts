@@ -8,15 +8,27 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
+import {ExampleService} from './home/example.service';
+import {MonsterService} from './monster/monster.service';
+import {HttpClientModule} from '@angular/common/http';
+import { IonicStorageModule } from '@ionic/storage';
 
+// @ts-ignore
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule],
+  imports: [BrowserModule, HttpClientModule,
+      IonicStorageModule.forRoot({
+        name: 'mydb',
+        driverOrder: ['indexeddb', 'sqlite', 'websql']
+      }),
+    IonicModule.forRoot(), AppRoutingModule],
   providers: [
     StatusBar,
     SplashScreen,
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
+      ExampleService,
+      MonsterService,
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy}
   ],
   bootstrap: [AppComponent]
 })

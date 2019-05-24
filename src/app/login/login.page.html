@@ -1,0 +1,57 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Login
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+   
+      <ion-content>
+          <div class="ion-align-items-center">
+              <img src="assets/img/logo/mhwlogo.png" alt="Logo Monster hunter"/>
+          </div>
+        <div class="ion-padding">
+          <form [formGroup]="loginForm" class="list-form">
+      <ion-item class="ion-margin-bottom">
+        <ion-label position="floating">Username</ion-label>
+        <ion-input type="text" color="primary" formControlName="username"></ion-input>
+      </ion-item>
+            <p ion-text *ngIf="loginForm.get('username').touched && loginForm.get('username').invalid">
+                    <ion-text color="danger">Username richiesto con min 5 caratteri</ion-text>
+            </p>
+            <ion-item class="ion-margin-bottom">
+                <ion-label position="floating">E-mail</ion-label>
+                <ion-input type="email" formControlName="email"></ion-input>
+            </ion-item>
+              <p ion-text *ngIf="loginForm.get('email').touched && loginForm.get('email').invalid">
+                  <ion-text color="danger">Email non valida</ion-text>
+              </p>
+      <ion-item class="ion-margin-bottom">
+        <ion-label position="floating">Password</ion-label>
+        <ion-input type="password" formControlName="password"></ion-input>
+      </ion-item>
+              <p ion-text *ngIf="loginForm.get('password').touched && loginForm.get('password').invalid">
+                  <ion-text color="danger">Password obbligatoria e di minimo 5 caratteri</ion-text>
+              </p>
+      <ion-item class="ion-margin-bottom">
+        <ion-label position="floating">Conferma Password</ion-label>
+        <ion-input type="password" formControlName="conferma"></ion-input>
+      </ion-item>
+              <p ion-text *ngIf="loginForm.get('conferma').touched && loginForm.get('conferma').invalid">
+                  <ion-text color="danger">Conferma Password obbligatoria</ion-text>
+              </p>
+      <div class="ion-margin-top">
+      <ion-button color="primary"  expand="full" [disabled]="!loginForm.valid" tappable>Login</ion-button>
+      </div>
+
+          <div class="ion-margin-top">
+            <h5>Non hai ancra un account? </h5>
+          </div>
+          </form>
+        </div>
+      </ion-content>
+ 
