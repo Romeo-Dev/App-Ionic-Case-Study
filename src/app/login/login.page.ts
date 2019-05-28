@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {FormGroup, Validators} from '@angular/forms';
 import {FormBuilder} from '@angular/forms';
+import {Storage} from '@ionic/storage';
+import {UtenteModel} from '../utente.model';
+import {NavController} from '@ionic/angular';
 
 @Component({
   selector: 'app-login',
@@ -10,8 +13,9 @@ import {FormBuilder} from '@angular/forms';
 export class LoginPage implements OnInit {
 
   loginForm: FormGroup;
+  utente: UtenteModel;
 
-  constructor(private formbuilder: FormBuilder) {
+  constructor(private formbuilder: FormBuilder, private store: Storage,private navCtrl: NavController) {
 
   }
 
@@ -24,4 +28,16 @@ export class LoginPage implements OnInit {
     });
   }
 
+
+  onLogin(){
+    this.utente = new UtenteModel(this.loginForm.value.username,this.loginForm.value.email,this.loginForm.value.password)
+      this.store.set('utente',this.utente);
+    this.navCtrl.navigateRoot('home');
+  }
+
+  stampaLog(){
+    this.store.get('utente').then(res =>{
+      console.log('My name is '+res.username);
+    })
+  }
 }

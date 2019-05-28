@@ -12,6 +12,8 @@ import {ExampleService} from './home/example.service';
 import {MonsterService} from './monster/monster.service';
 import {HttpClientModule} from '@angular/common/http';
 import { IonicStorageModule } from '@ionic/storage';
+import {ItemsService} from './items/items.service';
+import {WpdetailsService} from './wpdetails/wpdetails.service';
 
 // @ts-ignore
 @NgModule({
@@ -28,6 +30,8 @@ import { IonicStorageModule } from '@ionic/storage';
     SplashScreen,
       ExampleService,
       MonsterService,
+      ItemsService,
+      WpdetailsService,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy}
   ],
   bootstrap: [AppComponent]

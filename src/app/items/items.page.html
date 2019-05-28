@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Items
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+
+  <ion-row *ngFor="let ite of itemas">
+    <ion-col size="12" size-sm>
+
+      <ion-item detail>
+        <ion-label text-wrap>
+          <ion-text color="tertiary">
+            <h3>{{ite.name}}</h3>
+          </ion-text>
+          <p>{{ite.description}}</p>
+          <ion-text color="secondary">
+            <p>Value: {{ite.value}}</p>
+          </ion-text>
+        </ion-label>
+      </ion-item>
+    </ion-col>
+  </ion-row>
+
+</ion-content>

@@ -19,10 +19,16 @@ export class AppComponent {
       color: 'primary'
     },
     {
-      title: 'Login',
-      url: '/login',
-      icon: 'person',
+      title: 'Armor',
+      url: '/armor',
+      icon: 'logo-octocat',
       color: 'primary'
+    },
+    {
+      title: 'Items',
+      url: '/items',
+      icon: 'water',
+      color: 'secondary'
     },
     {
       title: 'Monster',
@@ -34,12 +40,6 @@ export class AppComponent {
       title: 'Map',
       url: '/map',
       icon: 'compass',
-      color: 'primary'
-    },
-    {
-      title: 'Armor',
-      url: '/armor',
-      icon: 'logo-octocat',
       color: 'primary'
     }
   ];

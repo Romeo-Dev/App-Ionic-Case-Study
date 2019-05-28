@@ -6,6 +6,17 @@
     <ion-title>
       Weapons
     </ion-title>
+    <ion-text color="tertiary" (click)="tryservice()" class="io" slot="end" *ngIf="utente != null; else showicon">
+      <ion-button>
+      <ion-icon name="contact" large></ion-icon>
+      {{utente.username}}
+      </ion-button>
+    </ion-text>
+    <ng-template #showicon>
+    <ion-text color="tertiary" slot="end">
+      <ion-fab-button (click)="goToLoginForm()"><ion-icon name="contact"></ion-icon></ion-fab-button>
+    </ion-text>
+    </ng-template>
   </ion-toolbar>
 </ion-header>
 
@@ -33,6 +44,5 @@
 
       </ion-item-sliding>
     </ion-list>
-   <ion-button expand="full" (click)="tryservice()">Cliccami</ion-button>
   </div>
 </ion-content>

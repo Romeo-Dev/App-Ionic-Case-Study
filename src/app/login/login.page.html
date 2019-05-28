@@ -45,11 +45,12 @@
                   <ion-text color="danger">Conferma Password obbligatoria</ion-text>
               </p>
       <div class="ion-margin-top">
-      <ion-button color="primary"  expand="full" [disabled]="!loginForm.valid" tappable>Login</ion-button>
+      <ion-button color="primary" (click)="onLogin()" expand="full" [disabled]="!loginForm.valid" tappable>Login</ion-button>
       </div>
 
           <div class="ion-margin-top">
-            <h5>Non hai ancra un account? </h5>
+            <h5>Stampa utente appena loggato con un toast</h5>
+              <ion-button color="secondary"  (click)="stampaLog()" [disabled]="!loginForm.valid">Stampa utente</ion-button>
           </div>
           </form>
         </div>

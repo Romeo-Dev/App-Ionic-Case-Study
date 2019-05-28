@@ -8,6 +8,7 @@ const routes: Routes = [
   { path: 'details', loadChildren: './details/details.module#DetailsPageModule' },
   { path: 'wpdetails', loadChildren: './wpdetails/wpdetails.module#WpdetailsPageModule' },
   { path: 'login', loadChildren: './login/login.module#LoginPageModule' },
+  { path: 'items', loadChildren: './items/items.module#ItemsPageModule' },
 ];
 
 @NgModule({

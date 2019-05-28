@@ -4,7 +4,8 @@ import {NavigationExtras, Router} from '@angular/router';
 import {WeaponModel} from '../weapon.model';
 import {WpdetailsService} from './wpdetails.service';
 // @ts-ignore
-import {Postmodel} from '../../postmodel';
+import {Postmodel} from '../postmodel';
+import {subscriptionLogsToBeFn} from 'rxjs/internal/testing/TestScheduler';
 
 
 @Component({
@@ -15,18 +16,25 @@ import {Postmodel} from '../../postmodel';
 export class WpdetailsPage implements OnInit {
     mywp: WeaponModel;
     mypost: Postmodel;
+
   constructor(private activate: ActivatedRoute, private router: Router,private detail: WpdetailsService) {
     this.mywp = this.router.getCurrentNavigation().extras.state.obj;
-    this.getDetailPosts();
   }
 
   ngOnInit() {
+      this.getDetailPosts();
   }
 
   getDetailPosts(){
-    this.detail.getSwitchAxe().subscribe( res =>{
+     this.detail.getSwitchAxe().subscribe( res =>{
       this.mypost = res;
       console.log(this.mypost);
-    })
+    });
   }
+
+  ngOnDestroy(){
+
+
+  }
+
 }

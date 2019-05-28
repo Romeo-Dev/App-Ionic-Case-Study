@@ -3,7 +3,7 @@ import {HttpClient} from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 // @ts-ignore
-import {Postmodel} from '../../postmodel';
+import {Postmodel} from '../postmodel';
 
 @Injectable({
   providedIn: 'root'
@@ -15,10 +15,8 @@ export class WpdetailsService {
 
   }
   getSwitchAxe(): Observable<Postmodel>{
-    this.post = this.http.get('https://mhw-db.com/motion-values/great-sword');
+    this.post = this.http.get<Postmodel>('https://mhw-db.com/motion-values/great-sword');
      return  this.post;
   }
-
-
 
 }
