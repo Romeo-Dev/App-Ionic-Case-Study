@@ -15,7 +15,7 @@ import {subscriptionLogsToBeFn} from 'rxjs/internal/testing/TestScheduler';
 })
 export class WpdetailsPage implements OnInit {
     mywp: WeaponModel;
-    mypost: Postmodel;
+    mypost: Postmodel[];
 
   constructor(private activate: ActivatedRoute, private router: Router,private detail: WpdetailsService) {
     this.mywp = this.router.getCurrentNavigation().extras.state.obj;
@@ -31,6 +31,14 @@ export class WpdetailsPage implements OnInit {
       console.log(this.mypost);
     });
   }
+
+  getAllWpByType(type: string){
+      this.detail.getAllLongSword(type).subscribe(res=>{
+         this.mypost = res;
+         console.log(this.mypost);
+      });
+  }
+
 
   ngOnDestroy(){
 

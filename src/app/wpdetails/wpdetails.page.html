@@ -15,10 +15,12 @@
       <ion-item>
         <ion-label>{{p.name}}</ion-label>
       </ion-item>
-
       <ion-card-content>
        {{p.weaponType}}
-        <ion-text color="tertiary">{{p.damageType}}</ion-text>
+        <ion-text color="secondary">
+          <p>Damage on display: {{p.attack.display}}</p>
+          <p>Damage raw effective: {{p.attack.raw}}</p>
+        </ion-text>
       </ion-card-content>
     </ion-card>
 </ion-content>

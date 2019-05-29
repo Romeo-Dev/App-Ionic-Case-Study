@@ -15,27 +15,27 @@ export class ExampleService {
   }
 
   getAllWeapon(){
-    this.serviceitem = [{nome: 'Great Sword',
+    this.serviceitem = [{nome: 'great-sword',
       difficolta: 'High',
       tipo: 'Spada',
       img: 'gsprova.jpg'
     },
-      {nome: 'Long Sword',
+      {nome: 'long-sword',
         difficolta: 'Medium',
         tipo: 'Spada',
         img: 'lsprova.jpg'
       },
-      {nome: 'Light Bow Gun',
+      {nome: 'light-bowgun',
         difficolta: 'Easy',
         tipo: 'Artiglieria',
         img: 'lbgprova.jpg'
       },
-      {nome: 'Hummer',
+      {nome: 'hammer',
         difficolta: 'Medium',
         tipo: 'Contundente',
         img: 'hummerprova.jpg'
       },
-      {nome: 'Hunting Horn',
+      {nome: 'hunting-horn',
         difficolta: 'Scozzese',
         tipo: 'Contundente',
         img: 'cornoprova.jpg'
